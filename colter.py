@@ -33,7 +33,8 @@ def parse_input():
         parts = input_data[current_line].split()
         tile_id = parts[0]
         tc, tn = map(int, parts[1:])
-        tiles.append((tile_id, tc, tn))
+        tile_id_to_cost[tile_id] = tc
+        tile_id_to_remaining[tile_id] = tn
         current_line += 1
     
     return {
